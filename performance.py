@@ -1,7 +1,7 @@
 
 SCHOOL PERFORMANCE ANALYSIS DATABASE
    
-CREATE TABLE Year Group (
+CREATE TABLE Year_Group (
     year_group_id INTEGER PRIMARY KEY ,
     year_group_name TEXT NOT NULL,
     academic_year TEXT NOT NULL
@@ -14,7 +14,7 @@ CREATE TABLE Students (
     gender TEXT,
     date_of_birth DATE,
     year_group_id INTEGER,
-    FOREIGN KEY (year_group_id) REFERENCES Year Group(year_group_id)
+    FOREIGN KEY (year_group_id) REFERENCES Year_Group(year_group_id)
 );
 
 CREATE TABLE Teachers (
@@ -50,7 +50,7 @@ CREATE TABLE Scores (
 );
 
 CREATE TABLE Attendance (
-    attendance_id INTEGER PRIMARY KEY,
+    attendance_id INTEGER PRIMARY KEY AUTO_INCREMENT,
     student_id INTEGER NOT NULL,
     attendance_date DATE,
     status TEXT CHECK(status IN ('Present', 'Absent')),
@@ -59,7 +59,7 @@ CREATE TABLE Attendance (
 
 INSERT SAMPLE DATA 
 
-INSERT INTO Year Group VALUES
+INSERT INTO Year_Group VALUES
 (1, 'Year 1', '2024/2025'),
 (2, 'Year 2', '2024/2025'),
 (3, 'Year 3', '2024/2025');
@@ -122,18 +122,18 @@ INSERT INTO Subjects VALUES
 (101, 'Biochemistry', 2),
 (300, 'Physics', 3),
 (100, 'Introduction to Mathematics', 4),
-(300, 'Chemistry', 5),
-(001, 'English Literature', 6),
-(007, 'Genetics', 7);
+(301, 'Chemistry', 5),
+(411, 'English Literature', 6),
+(417, 'Genetics', 7);
 
 INSERT INTO Exams VALUES
 (1, 200, 'Semester 1', '2026-01-15', 100),
 (2, 101, 'Semester 2', '2025-01-20', 100),
 (3, 300, 'Semester 1', '2025-01-25', 100),
 (4, 100, 'Semester 2', '2025-01-30', 100),
-(5, 300, 'Semester 1', '2025-02-05', 100),
-(6, 001, 'Semester 2', '2025-02-10', 100),
-(7, 007, 'Semester 1', '2025-02-15', 100);
+(5, 301, 'Semester 1', '2025-02-05', 100),
+(6, 411, 'Semester 2', '2025-02-10', 100),
+(7, 417, 'Semester 1', '2025-02-15', 100);
 
 INSERT INTO Scores VALUES
 (1,287,3,72),
@@ -177,168 +177,58 @@ INSERT INTO Scores VALUES
 (39,189,1,83),
 (40,347,5,88);
 
-INSERT INTO Attendance VALUES
- OCTOBER 2024
-(2,287,'2024-10-15','Present'),
-(1,154,'2024-10-15','Present'),
-(3,392,'2024-10-15','Absent'),
-(1,118,'2024-10-15','Present'),
-(3,341,'2024-10-15','Present'),
-(2,209,'2024-10-15','Present'),
-(3,375,'2024-10-15','Absent'),
-(1,162,'2024-10-15','Present'),
-(2,299,'2024-10-15','Present'),
-(1,181,'2024-10-15','Present'),
-(3,326,'2024-10-15','Present'),
-(1,145,'2024-10-15','Absent'),
-(3,388,'2024-10-15','Present'),
-(2,214,'2024-10-15','Present'),
-(3,359,'2024-10-15','Absent'),
-(1,197,'2024-10-15','Present'),
-(3,312,'2024-10-15','Present'),
-(1,168,'2024-10-15','Present'),
-(2,284,'2024-10-15','Present'),
-(1,139,'2024-10-15','Absent'),
-(3,367,'2024-10-15','Present'),
-(2,223,'2024-10-15','Present'),
-(3,395,'2024-10-15','Absent'),
-(1,176,'2024-10-15','Present'),
-(2,248,'2024-10-15','Present'),
-(3,331,'2024-10-15','Present'),
-(1,158,'2024-10-15','Absent'),
-(2,279,'2024-10-15','Present'),
-(3,354,'2024-10-15','Present'),
-(1,191,'2024-10-15','Present'),
-(3,318,'2024-10-15','Present'),
-(2,266,'2024-10-15','Absent'),
-(1,173,'2024-10-15','Present'),
-(3,304,'2024-10-15','Present'),
-(1,142,'2024-10-15','Present'),
-(3,381,'2024-10-15','Absent'),
-(2,257,'2024-10-15','Present'),
-(3,364,'2024-10-15','Present'),
-(1,189,'2024-10-15','Present'),
-(3,347,'2024-10-15','Present'),
+INSERT INTO Attendance (attendance_id, student_id, attendance_date, status) VALUES
+(2,287,'2025-01-11','Present'),
+(1,154,'2025-01-11','Present'),
+(3,392,'2025-01-11','Absent'),
+(1,118,'2025-01-11','Present'),
+(3,341,'2025-01-11','Present'),
+(2,209,'2025-01-11','Present'),
+(3,375,'2025-01-11','Absent'),
+(1,162,'2025-01-11','Present'),
+(2,299,'2025-01-11','Present'),
+(1,181,'2025-01-11','Present'),
+(3,326,'2025-01-11','Present'),
+(1,145,'2025-01-11','Absent'),
+(3,388,'2025-01-11','Present'),
+(2,214,'2025-01-11','Present'),
+(3,359,'2025-01-11','Absent'),
+(1,197,'2025-01-11','Present'),
+(3,312,'2025-01-11','Present'),
+(1,168,'2025-01-11','Present'),
+(2,284,'2025-01-11','Present'),
+(1,139,'2025-01-11','Absent'),
+(3,367,'2025-01-11','Present'),
+(2,223,'2025-01-11','Present'),
+(3,395,'2025-01-11','Absent'),
+(1,176,'2025-01-11','Present'),
+(2,248,'2025-01-11','Present'),
+(3,331,'2025-01-11','Present'),
+(1,158,'2025-01-11','Absent'),
+(2,279,'2025-01-11','Present'),
+(3,354,'2025-01-11','Present'),
+(1,191,'2025-01-11','Present'),
+(3,318,'2025-01-11','Present'),
+(2,266,'2025-01-11','Absent'),
+(1,173,'2025-01-11','Present'),
+(3,304,'2025-01-11','Present'),
+(1,142,'2025-01-11','Present'),
+(3,381,'2025-01-11','Absent'),
+(2,257,'2025-01-11','Present'),
+(3,364,'2025-01-11','Present'),
+(1,189,'2025-01-11','Present'),
+(3,347,'2025-01-11','Present');
 
- NOVEMBER 2024
-(2,287,'2024-11-15','Present'),
-(1,154,'2024-11-15','Present'),
-(3,392,'2024-11-15','Present'),
-(1,118,'2024-11-15','Present'),
-(3,341,'2024-11-15','Absent'),
-(2,209,'2024-11-15','Present'),
-(3,375,'2024-11-15','Present'),
-(1,162,'2024-11-15','Present'),
-(2,299,'2024-11-15','Absent'),
-(1,181,'2024-11-15','Present'),
-(3,326,'2024-11-15','Present'),
-(1,145,'2024-11-15','Present'),
-(3,388,'2024-11-15','Present'),
-(2,214,'2024-11-15','Absent'),
-(3,359,'2024-11-15','Present'),
-(1,197,'2024-11-15','Present'),
-(3,312,'2024-11-15','Absent'),
-(1,168,'2024-11-15','Present'),
-(2,284,'2024-11-15','Present'),
-(1,139,'2024-11-15','Present'),
-(3,367,'2024-11-15','Present'),
-(2,223,'2024-11-15','Absent'),
-(3,395,'2024-11-15','Present'),
-(1,176,'2024-11-15','Present'),
-(2,248,'2024-11-15','Present'),
-(3,331,'2024-11-15','Absent'),
-(1,158,'2024-11-15','Present'),
-(2,279,'2024-11-15','Present'),
-(3,354,'2024-11-15','Present'),
-(1,191,'2024-11-15','Absent'),
-(3,318,'2024-11-15','Present'),
-(2,266,'2024-11-15','Present'),
-(1,173,'2024-11-15','Present'),
-(3,304,'2024-11-15','Present'),
-(1,142,'2024-11-15','Absent'),
-(3,381,'2024-11-15','Present'),
-(2,257,'2024-11-15','Present'),
-(3,364,'2024-11-15','Absent'),
-(1,189,'2024-11-15','Present'),
-(3,347,'2024-11-15','Present'),
 
- DECEMBER 2024
-(2,287,'2024-12-15','Present'),
-(1,154,'2024-12-15','Absent'),
-(3,392,'2024-12-15','Present'),
-(1,118,'2024-12-15','Present'),
-(3,341,'2024-12-15','Present'),
-(2,209,'2024-12-15','Absent'),
-(3,375,'2024-12-15','Present'),
-(1,162,'2024-12-15','Present'),
-(2,299,'2024-12-15','Present'),
-(1,181,'2024-12-15','Present'),
-(3,326,'2024-12-15','Absent'),
-(1,145,'2024-12-15','Present'),
-(3,388,'2024-12-15','Present'),
-(2,214,'2024-12-15','Present'),
-(3,359,'2024-12-15','Present'),
-(1,197,'2024-12-15','Absent'),
-(3,312,'2024-12-15','Present'),
-(1,168,'2024-12-15','Present'),
-(2,284,'2024-12-15','Absent'),
-(1,139,'2024-12-15','Present'),
-(3,367,'2024-12-15','Present'),
-(2,223,'2024-12-15','Present'),
-(3,395,'2024-12-15','Absent'),
-(1,176,'2024-12-15','Present'),
-(2,248,'2024-12-15','Present'),
-(3,331,'2024-12-15','Present'),
-(1,158,'2024-12-15','Present'),
-(2,279,'2024-12-15','Absent'),
-(3,354,'2024-12-15','Present'),
-(1,191,'2024-12-15','Present'),
-(3,318,'2024-12-15','Absent'),
-(2,266,'2024-12-15','Present'),
-(1,173,'2024-12-15','Present'),
-(3,304,'2024-12-15','Present'),
-(1,142,'2024-12-15','Present'),
-(3,381,'2024-12-15','Absent'),
-(2,257,'2024-12-15','Present'),
-(3,364,'2024-12-15','Present'),
-(1,189,'2024-12-15','Absent'),
-(3,347,'2024-12-15','Present');
 
 
 PERFORMANCE ANALYSIS QUERIES 
 ATTENDANCE ANALYSIS
-Attendance per year group
-SELECT
-    CASE year_group_id
-        WHEN 1 THEN 'Year 1'
-        WHEN 2 THEN 'Year 2'
-        WHEN 3 THEN 'Year 3'
-    END AS year_group,
-    ROUND(
-        AVG(
-            CASE 
-                WHEN status = 'Present' THEN 1.0
-                ELSE 0.0
-            END
-        ) * 100,
-        2
-    ) AS average_attendance_percentage
-FROM Attendance
-GROUP BY year_group_id
-ORDER BY year_group_id;
 
 Attendance per subject vs performance 
 SELECT
     sub.subject_name,
-    ROUND(
-        AVG(
-            CASE 
-                WHEN a.status = 'Present' THEN 1.0
-                ELSE 0.0
-            END
-        ) * 100,
-        2
-    ) AS average_attendance_percentage,
+    ROUND(AVG(CASE WHEN a.status = 'Present' THEN 1.0 ELSE 0.0 END) * 100,2) AS average_attendance_percentage,
     ROUND(AVG(sc.score), 2) AS average_score
 FROM Attendance a
 JOIN Students s ON a.student_id = s.student_id
@@ -355,15 +245,7 @@ SELECT
         WHEN 2 THEN 'Year 2'
         WHEN 3 THEN 'Year 3'
     END AS year_group,
-    ROUND(
-        AVG(
-            CASE 
-                WHEN a.status = 'Present' THEN 1.0
-                ELSE 0.0
-            END
-        ) * 100,
-        2
-    ) AS average_attendance_percentage,
+    ROUND(AVG(CASE WHEN a.status = 'Present' THEN 1.0 ELSE 0.0 END ) * 100,2) AS average_attendance_percentage,
     ROUND(AVG(sc.score), 2) AS average_score
 FROM Students s
 JOIN Attendance a ON s.student_id = a.student_id
@@ -376,15 +258,7 @@ TEACHER PERFORMANCE ANALYSIS
 SELECT
     t.first_name || ' ' || t.last_name AS teacher_name,
     sub.subject_name,
-    ROUND(
-        AVG(
-            CASE 
-                WHEN a.status = 'Present' THEN 1.0
-                ELSE 0.0
-            END
-        ) * 100,
-        2
-    ) AS average_attendance_percentage,
+    ROUND(AVG(CASE WHEN a.status = 'Present' THEN 1.0 ELSE 0.0 END) * 100,2) AS average_attendance_percentage,
     ROUND(AVG(sc.score), 2) AS average_student_score
 FROM Teachers t
 JOIN Subjects sub ON t.teacher_id = sub.teacher_id
@@ -394,56 +268,22 @@ JOIN Attendance a ON sc.student_id = a.student_id
 GROUP BY t.teacher_id, sub.subject_id
 ORDER BY average_student_score DESC;
 
-2.Teacher vs year group attendance vs performance
-SELECT
-    t.first_name || ' ' || t.last_name AS teacher_name,
-    CASE s.year_group_id
-        WHEN 1 THEN 'Year 1'
-        WHEN 2 THEN 'Year 2'
-        WHEN 3 THEN 'Year 3'
-    END AS year_group,
-    ROUND(
-        AVG(
-            CASE
-                WHEN a.status = 'Present' THEN 1.0
-                ELSE 0.0
-            END
-        ) * 100,
-        2
-    ) AS average_attendance_percentage,
-    ROUND(AVG(sc.score), 2) AS average_score
-FROM Teachers t
-JOIN Subjects sub ON t.teacher_id = sub.teacher_id
-JOIN Exams e ON sub.subject_id = e.subject_id
-JOIN Scores sc ON e.exam_id = sc.exam_id
-JOIN Students s ON sc.student_id = s.student_id
-JOIN Attendance a ON s.student_id = a.student_id
-GROUP BY t.teacher_id, s.year_group_id
-ORDER BY t.teacher_name, s.year_group_id;
-
 YEAR GROUP PERFORMANCE ANALYSIS
 1.Year group vs attendance vs performance 
-SELECT
+ SELECT
     CASE s.year_group_id
         WHEN 1 THEN 'Year 1'
         WHEN 2 THEN 'Year 2'
         WHEN 3 THEN 'Year 3'
     END AS year_group,
-    ROUND(
-        AVG(
-            CASE
-                WHEN a.status = 'Present' THEN 1.0
-                ELSE 0.0
-            END
-        ) * 100,
-        2
-    ) AS average_attendance_percentage,
+    ROUND(AVG(CASE WHEN a.status = 'Present' THEN 1.0 ELSE 0.0 END) * 100,2) AS average_attendance_percentage,
     ROUND(AVG(sc.score), 2) AS average_score
 FROM Students s
 JOIN Attendance a ON s.student_id = a.student_id
 JOIN Scores sc ON s.student_id = sc.student_id
 GROUP BY s.year_group_id
 ORDER BY s.year_group_id;
+
 2.Year group vs Attendance vs subject performance
 SELECT
     CASE s.year_group_id
@@ -452,15 +292,7 @@ SELECT
         WHEN 3 THEN 'Year 3'
     END AS year_group,
     sub.subject_name,
-    ROUND(
-        AVG(
-            CASE
-                WHEN a.status = 'Present' THEN 1.0
-                ELSE 0.0
-            END
-        ) * 100,
-        2
-    ) AS average_attendance_percentage,
+    ROUND(AVG(CASE WHEN a.status = 'Present' THEN 1.0 ELSE 0.0 END) * 100,2) AS average_attendance_percentage,
     ROUND(AVG(sc.score), 2) AS average_subject_score
 FROM Students s
 JOIN Attendance a ON s.student_id = a.student_id
@@ -470,31 +302,6 @@ JOIN Subjects sub ON e.subject_id = sub.subject_id
 GROUP BY s.year_group_id, sub.subject_id
 ORDER BY s.year_group_id, sub.subject_name;
 
-3.Year group vs genetics performance vs attendance
-SELECT
-    CASE s.year_group_id
-        WHEN 1 THEN 'Year 1'
-        WHEN 2 THEN 'Year 2'
-        WHEN 3 THEN 'Year 3'
-    END AS year_group,
-    ROUND(
-        AVG(
-            CASE
-                WHEN a.status = 'Present' THEN 1.0
-                ELSE 0.0
-            END
-        ) * 100,
-        2
-    ) AS average_attendance_percentage,
-    ROUND(AVG(sc.score), 2) AS average_genetics_score
-FROM Students s
-JOIN Attendance a ON s.student_id = a.student_id
-JOIN Scores sc ON s.student_id = sc.student_id
-JOIN Exams e ON sc.exam_id = e.exam_id
-JOIN Subjects sub ON e.subject_id = sub.subject_id
-WHERE sub.subject_name = 'Genetics'
-GROUP BY s.year_group_id
-ORDER BY s.year_group_id;
 
 STUDENT PERFORMANCE ANALYSIS
 1.Student vs average subject scores
@@ -540,15 +347,7 @@ ORDER BY sub.subject_name, s.year_group_id;
 2.Subject vs average attendance vs average performance
 SELECT
     sub.subject_name,
-    ROUND(
-        AVG(
-            CASE
-                WHEN a.status = 'Present' THEN 1.0
-                ELSE 0.0
-            END
-        ) * 100,
-        2
-    ) AS average_attendance_percentage,
+    ROUND(AVG(CASE WHEN a.status = 'Present' THEN 1.0 ELSE 0.0 END) * 100,2) AS average_attendance_percentage,
     ROUND(AVG(sc.score), 2) AS average_subject_score
 FROM Subjects sub
 JOIN Exams e ON sub.subject_id = e.subject_id

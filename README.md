@@ -4,10 +4,19 @@ This project is a DB sqllite school performance analysis database which stores ,
 
 ## Features
  
- * ** Primary key  :** a unique identifier of a table  e.g student id 
+ * ** Year group data  :** has a year group identification nmuber, a year group name and the academic year.
 
- * ** Foreign key  :**shows the relationship between the different tables  e.g class id to show relationship between table class and students 
+ * ** Teachers data :**  has a  teacher identification number ,their names and their specific department.
 
+ * ** Student data :** has the student identification number, names,gender,date of birth and  year group identification number.
+
+ * ** Attendance data :** has the attendance identification number,student identification,attendance date and the status.
+
+ * ** Exams data :** has the examination identification number,subject identification number,exam name ,date and maximum score.
+
+ * ** Score :** has the score ,student and exam identication numbers and the score out of 100.
+
+ * ** Attendance data : ** has the attendance and student identification numbers,attendance date and status.
 
 ## Technical Stack
 * ** Language : ** SQL
@@ -25,6 +34,9 @@ Open the DB Browser for sql lite.
 Click on new database add a new file school_performance and save.
 
 Copy and paste the querries from peformance.py file and paste them into the execute SQL and run the querries.
+
+To save the file as csv click on the top left file tab then sccroll down to export then click to csv file ,then choose the table ,and write your file name and save .
+
 
 ## Contributing
 
@@ -67,7 +79,7 @@ main.ipynb            # Main project information
 
 README.md          # Project information
 
-
+csv files  # store the analysis done from the data in the tables 
 
 ## License
 
