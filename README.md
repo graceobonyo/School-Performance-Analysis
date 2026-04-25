@@ -40,7 +40,7 @@ This project is a a python school performance analysis database which stores ,ma
     ```
 
 2.  **Run the program:**
-    In the terminal pip install requests, bs4, pandas, matplotlib
+    In the terminal pip install pandas,seaborn and  matplotlib
     Then execute the script:
 
     ```bash
