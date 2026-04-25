@@ -1,6 +1,6 @@
 # School-Performance-Analysis
 
-This project is a DB sqllite school performance analysis database which stores ,mangaes and analyses student and teachers information.It stores teachers,students,classes,subjects,exams,scores and attendance data in tables .The information can then be analysed and then used to track a student attendance and scores across different subjects and provide a report on that.
+This project is a DB Browser(SQLite) school performance analysis database which stores ,mangaes and analyses student and teachers information.It stores teachers,students,classes,subjects,exams,scores and attendance data in tables .The information can then be analysed and then used to track a student attendance and scores across different subjects and provide a report on that.
 
 ## Features
  
@@ -20,22 +20,22 @@ This project is a DB sqllite school performance analysis database which stores ,
 
 ## Technical Stack
 * ** Language : ** SQL
-* ** Storage :DB Browser for SQL lite
+* ** Storage :DB Browser(SQLite)
 * ** Storage :** file system
 
 ### Prerequisites
-* **  Install DB Browser for sql lite in your computer 
+* **  Install DB Browser(SQLite) in your computer 
 
 
 ### Installation and setup
 
-Open the DB Browser for sql lite.
+Open the DB Browser(SQLite).
 
 Click on new database add a new file school_performance and save.
 
-Copy and paste the querries from peformance.py file and paste them into the execute SQL and run the querries.
+Copy and paste the querries from  performance.py and paste them into  execute SQL in the  DB Browser for sql lite and run the querries.
 
-To save the file as csv click on the top left file tab then sccroll down to export then click to csv file ,then choose the table ,and write your file name and save .
+To save the file as csv click on the top left file tab then scroll down to export then click to csv file ,then choose the table ,and write your file name and save .
 
 
 ## Contributing
