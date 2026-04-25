@@ -1,6 +1,6 @@
 # School-Performance-Analysis
 
-This project is a a python school performance analysis database which stores ,mangaes and analyses student and teachers information.It stores teachers,students,classes,subjects,exams,scores and attendance data in tables .The information can then be analysed and then used to track a student attendance and scores across different subjects and provide a report on that.
+This project is a DB Browser(SQLite) school performance analysis database which stores ,mangaes and analyses student and teachers information.It stores teachers,students,classes,subjects,exams,scores and attendance data in tables .The information can then be analysed and then used to track a student attendance and scores across different subjects and provide a report on that.
 
 ## Features
  
@@ -18,34 +18,24 @@ This project is a a python school performance analysis database which stores ,ma
 
  * ** Attendance data : ** has the attendance and student identification numbers,attendance date and status.
 
- * ** data frame : ** store the data above
-
- * ** plot : ** to visualise the different analysis done
-
-### Technical Stack
-* ** Language : ** Python 3
-* ** Modules:** requests (Standard Library)
+## Technical Stack
+* ** Language : ** SQL
+* ** Storage :DB Browser(SQLite)
 * ** Storage :** file system
 
 ### Prerequisites
-* **  install python in to your computer 
+* **  Install DB Browser(SQLite) in your computer 
 
 
 ### Installation and setup
-**Clone the Repository:**
 
-    ```bash
-       git clone https://github.com/graceobonyo/School-Performance-Analysis/git
-       cd School-Performance-Analysis
-    ```
+Open the DB Browser(SQLite).
 
-2.  **Run the program:**
-    In the terminal pip install requests, bs4, pandas, matplotlib
-    Then execute the script:
+Click on new database add a new file school_performance and save.
 
-    ```bash
-    python main.ipynb 
-    ```
+Copy and paste the querries from  performance.py and paste them into  execute SQL in the  DB Browser for sql lite and run the querries.
+
+To save the file as csv click on the top left file tab then scroll down to export then click to csv file ,then choose the table ,and write your file name and save .
 
 
 ## Contributing
@@ -85,11 +75,9 @@ Contributions are what make the open-source community an excellent place to lear
 
 text
 
-main.ipynb        # Main project information
+main.ipynb            # Main project information
 
-main.py           # Store project information
-
-README.md         # Project information
+README.md          # Project information
 
 csv files  # store the analysis done from the data in the tables 
 
